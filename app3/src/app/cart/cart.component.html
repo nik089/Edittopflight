@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+    </head>
+    <body>
+        <table class="table table-condensed">
+            <thead>
+              <tr class="cart_menu">
+                <td>ID</td>
+                <td>DeparturePlace</td>
+                <td>ArrivalPlace</td>
+                <td>Price</td>
+                <td>Date</td>
+                <td>Src</td>
+              </tr>
+            </thead>
+            <tr *ngFor="let key of cData">
+                <td>{{key._id}}</td>
+                <td>{{key.DeparturePlace}}</td>
+                <td>{{ key.ArrivalPlace }}</td>
+                <td>{{key.price}}</td>
+                <td>{{key.date}}</td>
+                <td>{{key.src}}</td>
+                <td><a routerLink="/edittopflight/{{key._id}}"><input type="button" value="Edit" class="btn btn-info"></a></td>
+            </tr>
+            </table>
+            </body>
+            </html>
+     
+    

@@ -1,0 +1,48 @@
+<h1 style="text-align:center; color: rgb(21, 157, 42)">EditTopFlight</h1>
+
+<form [formGroup]="myForm" (ngSubmit)="editflight()" class="flight">
+  <div class="form-group">
+
+    <label>ID</label>
+    <input type="text" class="form-control" formControlName="id" name="id"/>
+    <div *ngIf="myForm.controls.id.invalid && myForm.controls.id.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.id.errors.required"> ID is required </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>DeparturePlace</label>
+    <input type="text" class="form-control" formControlName="DeparturePlace" name="DeparturePlace"/>
+    <div *ngIf="myForm.controls.DeparturePlace.invalid && myForm.controls.DeparturePlace.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.DeparturePlace.errors.required"> DeparturePlace is required </div>
+    </div>
+  </div>
+    <label>ArrivalPlace</label>
+    <input type="text" class="form-control" formControlName="ArrivalPlace" name="ArrivalPlace"/>
+    <div *ngIf="myForm.controls.ArrivalPlace.invalid && myForm.controls.ArrivalPlace.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.ArrivalPlace.errors.required"> ArrivalPlace is required </div>
+  </div>
+  
+  <div class="form-group">
+    <label>Price</label>
+    <input type="text" class="form-control" formControlName="price" name=price>
+    <div *ngIf="myForm.controls.price.invalid && myForm.controls.price.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.price.errors.required"> Price is required </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Date</label>
+    <input type="text" class="form-control" formControlName="date"  name="date" >
+    <div *ngIf="myForm.controls.date.invalid && myForm.controls.date.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.date.errors.required"> Date is required </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Src</label>
+    <input type="text" class="form-control" formControlName="src" name="src" />
+    <div *ngIf="myForm.controls.src.invalid && myForm.controls.src.touched" class="alert alert-danger">
+      <div *ngIf="myForm.controls.src.errors.required"> Src is required </div>
+    </div>
+  </div>
+
+  <input type="submit" value="EditTopFlight" class="btn btn-success" [disabled]="myForm.invalid">
+</form>
